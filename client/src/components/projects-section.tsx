@@ -12,8 +12,7 @@ export default function ProjectsSection() {
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       technologies: ["Android", "Firebase", "WebSocket", "XML"],
       icon: MessageSquare,
-      githubUrl: "#",
-      demoUrl: "#"
+      githubUrl: "https://github.com/Mynkara08/Chat_Messenger"
     },
     {
       title: "News App",
@@ -21,8 +20,7 @@ export default function ProjectsSection() {
       image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       technologies: ["Android", "Retrofit", "REST API", "XML"],
       icon: Newspaper,
-      githubUrl: "#",
-      demoUrl: "#"
+      githubUrl: "https://github.com/Mynkara08/NewsNow"
     },
     {
       title: "UNBIND Internship Project",
@@ -30,7 +28,6 @@ export default function ProjectsSection() {
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       technologies: ["Android", "Room DB", "Notifications", "Caching"],
       icon: Database,
-      githubUrl: "#",
       period: "May 2024 - June 2024"
     }
   ];
@@ -90,27 +87,21 @@ export default function ProjectsSection() {
                   </div>
                   
                   <div className="flex justify-between items-center pt-4">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex items-center gap-2"
-                      onClick={() => window.open(project.githubUrl, "_blank")}
-                    >
-                      <Github size={16} />
-                      View Code
-                    </Button>
-                    
-                    {project.demoUrl ? (
+                    {project.githubUrl ? (
                       <Button
-                        variant="ghost"
+                        variant="outline"
                         size="sm"
                         className="flex items-center gap-2"
-                        onClick={() => window.open(project.demoUrl, "_blank")}
+                        onClick={() => window.open(project.githubUrl, "_blank")}
                       >
-                        <ExternalLink size={16} />
-                        Demo
+                        <Github size={16} />
+                        View Code
                       </Button>
                     ) : (
+                      <div></div>
+                    )}
+                    
+                    {project.period && (
                       <span className="text-slate-500 text-sm">{project.period}</span>
                     )}
                   </div>

@@ -48,7 +48,7 @@ export default function SkillsSection() {
       icon: Code,
       skills: [
         { name: "C++", level: 90 },
-        { name: "Java", level: 85 },
+        { name: "Kotlin", level: 85 },
         { name: "Python", level: 80 },
         { name: "JavaScript", level: 75 },
       ],
@@ -76,7 +76,11 @@ export default function SkillsSection() {
   ];
 
   const achievements = [
-    { value: "1705", label: "LeetCode Max Rating" },
+    { 
+      value: "1705", 
+      label: "LeetCode Max Rating",
+      link: "https://leetcode.com/u/mayank_ara_08/"
+    },
     { value: "500+", label: "Problems Solved" },
     { value: "507", label: "India Rank ICPC" },
     { value: "600", label: "Google Kickstart Rank" },
@@ -148,8 +152,22 @@ export default function SkillsSection() {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="text-3xl font-bold mb-2">{achievement.value}</div>
-                  <div className="text-sm opacity-90">{achievement.label}</div>
+                  {achievement.link ? (
+                    <a
+                      href={achievement.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block hover:scale-105 transition-transform duration-200"
+                    >
+                      <div className="text-3xl font-bold mb-2">{achievement.value}</div>
+                      <div className="text-sm opacity-90">{achievement.label}</div>
+                    </a>
+                  ) : (
+                    <>
+                      <div className="text-3xl font-bold mb-2">{achievement.value}</div>
+                      <div className="text-sm opacity-90">{achievement.label}</div>
+                    </>
+                  )}
                 </motion.div>
               ))}
             </div>

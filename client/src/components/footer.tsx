@@ -5,12 +5,12 @@ export default function Footer() {
   const socialLinks = [
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/mayank-kumar",
+      href: "https://www.linkedin.com/in/mayank-kumar-798493230/",
       label: "LinkedIn",
     },
     {
       icon: Github,
-      href: "https://github.com/mayank-kumar",
+      href: "https://github.com/Mynkara08",
       label: "GitHub",
     },
     {

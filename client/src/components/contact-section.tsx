@@ -60,13 +60,13 @@ export default function ContactSection() {
       icon: Linkedin,
       title: "LinkedIn",
       value: "LinkedIn Profile",
-      href: "https://linkedin.com/in/mayank-kumar",
+      href: "https://www.linkedin.com/in/mayank-kumar-798493230/",
     },
     {
       icon: Github,
       title: "GitHub",
       value: "GitHub Profile",
-      href: "https://github.com/mayank-kumar",
+      href: "https://github.com/Mynkara08",
     },
     {
       icon: Phone,
@@ -143,7 +143,7 @@ export default function ContactSection() {
                   </p>
                   <Button
                     className="bg-primary text-white hover:bg-secondary transition-colors duration-200"
-                    onClick={() => window.open("/resume.pdf", "_blank")}
+                    onClick={() => window.open("/resume.jpg", "_blank")}
                   >
                     <Download size={16} className="mr-2" />
                     Download Resume
