@@ -22,7 +22,7 @@ export default function HeroSection() {
           >
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl ring-4 ring-white">
               <img
-                src="/attached_assets/new_pic_1751998947255.jpg"
+                src="/profile.jpg"
                 alt="Mayank Kumar - Software Developer"
                 className="w-full h-full object-cover"
               />
