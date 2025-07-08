@@ -22,8 +22,8 @@ export default function HeroSection() {
           >
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl ring-4 ring-white">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400"
-                alt="Professional headshot placeholder"
+                src="/attached_assets/new_pic_1751998947255.jpg"
+                alt="Mayank Kumar - Software Developer"
                 className="w-full h-full object-cover"
               />
             </div>
