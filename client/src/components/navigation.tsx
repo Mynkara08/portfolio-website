@@ -17,17 +17,24 @@ export default function Navigation() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    console.log('Attempting to scroll to:', sectionId);
     const element = document.getElementById(sectionId);
+    console.log('Element found:', element);
+    
     if (element) {
       const headerOffset = 80; // Account for fixed header height
       const elementPosition = element.offsetTop;
       const offsetPosition = elementPosition - headerOffset;
 
+      console.log('Scrolling to position:', offsetPosition);
+      
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth"
       });
       setIsOpen(false);
+    } else {
+      console.error(`Element with ID "${sectionId}" not found`);
     }
   };
 
