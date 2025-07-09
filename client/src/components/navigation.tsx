@@ -17,25 +17,31 @@ export default function Navigation() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    console.log('Attempting to scroll to:', sectionId);
-    const element = document.getElementById(sectionId);
-    console.log('Element found:', element);
+    // Close mobile menu first
+    setIsOpen(false);
     
-    if (element) {
-      const headerOffset = 80; // Account for fixed header height
-      const elementPosition = element.offsetTop;
-      const offsetPosition = elementPosition - headerOffset;
-
-      console.log('Scrolling to position:', offsetPosition);
+    // Add a small delay to ensure menu closes before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
       
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-      setIsOpen(false);
-    } else {
-      console.error(`Element with ID "${sectionId}" not found`);
-    }
+      if (element) {
+        const headerOffset = 80; // Account for fixed header height
+        const elementPosition = element.offsetTop;
+        const offsetPosition = elementPosition - headerOffset;
+        
+        // Use both scrollTo and scrollIntoView for better mobile compatibility
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+        
+        // Fallback for mobile devices
+        element.scrollIntoView({ 
+          behavior: "smooth", 
+          block: "start" 
+        });
+      }
+    }, 100);
   };
 
   const navItems = [
@@ -61,7 +67,11 @@ export default function Navigation() {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  scrollToSection(item.id);
+                }}
                 className="text-slate-600 hover:text-primary transition-colors duration-200"
               >
                 {item.label}
@@ -96,8 +106,12 @@ export default function Navigation() {
                 {navItems.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left px-3 py-2 text-slate-600 hover:text-primary transition-colors duration-200"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      scrollToSection(item.id);
+                    }}
+                    className="block w-full text-left px-3 py-2 text-slate-600 hover:text-primary transition-colors duration-200 hover:bg-slate-50 rounded-md"
                   >
                     {item.label}
                   </button>
