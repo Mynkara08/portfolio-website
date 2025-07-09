@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import profileImage from "@assets/IMG_20240127_191613_446_1752031417203.jpg";
+import profileImage from "@assets/IMG-20250709-WA0002~2_1752033824611.jpg";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
