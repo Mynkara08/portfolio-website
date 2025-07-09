@@ -1,12 +1,20 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import profileImage from "@assets/IMG_20240127_191613_446_1752031417203.jpg";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const headerOffset = 80; // Account for fixed header height
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -22,7 +30,7 @@ export default function HeroSection() {
           >
             <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl ring-4 ring-white">
               <img
-                src="/profile.jpg"
+                src={profileImage}
                 alt="Mayank Kumar - Software Developer"
                 className="w-full h-full object-cover"
               />
